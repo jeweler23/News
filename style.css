@@ -1,0 +1,45 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+
+.wrapper {
+  display: grid;
+  width: 1440px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  background-color: white;
+}
+
+.item {
+  border-top: 1px solid gray;
+}
+
+.btn {
+  padding: 10px;
+  background-color: royalblue;
+  border: none;
+  border-radius: 40px;
+  display: block;
+  width: auto;
+  margin: 30px 0px;
+}
+
+.btn:hover {
+  box-shadow: -1px 1px 52px -10px rgba(71, 80, 34, 0.2);
+}
+
+.inactive {
+  display: none;
+  margin: 0px 10px;
+}
+
+.active {
+  display: block;
+  margin: 0px 10px;
+}
