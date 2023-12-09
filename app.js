@@ -8,7 +8,7 @@ body.appendChild(section);
 body.appendChild(btnMore);
 
 news.textContent = "News";
-btnMore.textContent = "More";
+btnMore.textContent = "more 12  news";
 
 news.classList.add("title");
 btnMore.classList.add("btn");
@@ -37,21 +37,17 @@ function createLayout(obj, obj2) {
     <h2 class="news__title">${
       obj.title[0].toUpperCase() + obj.title.slice(1)
     }</h2>
-    <p class="news__text">${obj.body}</p>
+    <p class="news__text"> ${obj.body[0].toUpperCase() + obj.body.slice(1)}</p>
     `;
   div.innerHTML = layout;
 
   div.classList.add("item");
   div.classList.add("inactive");
 
-  //   obj2.id != undefined
-  //     ? obj.userId === obj2.id
-  //       ? (div.innerHTML += `<span>Autor:${obj2.name}</span>`)
-  //       : (div.innerHTML += `<span>Autor:</span>`)
-  //     : console.log("");
-
   if (obj.userId === obj2.id) {
-    div.innerHTML += `<span>Autor:${obj2.name}</span>`;
+    div.innerHTML += `<span class="autor">Autor: ${obj2.name}</span>`;
+  } else {
+    div.innerHTML += `<span class="autor">Autor: </span>`;
   }
 
   section.appendChild(div);
@@ -61,7 +57,7 @@ for (let i = 0; i < postsJson.length; i++) {
   createLayout(postsJson[i], authorJson);
 }
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 12; i++) {
   let activeDiv = section.childNodes[i];
   activeDiv.classList.remove("inactive");
   activeDiv.classList.add("active");
@@ -72,14 +68,14 @@ for (let i = 0; i < 10; i++) {
 // );
 
 // console.log(abs);
-let count = 20;
+let count = 24;
 function moreNews() {
-  for (let i = 10; i < count; i++) {
+  for (let i = 12; i < count; i++) {
     let activeDiv = section.childNodes[i];
     activeDiv.classList.remove("inactive");
     activeDiv.classList.add("active");
   }
-  count += 10;
+  count += 12;
 }
 
 btnMore.addEventListener("click", moreNews);
