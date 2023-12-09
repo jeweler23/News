@@ -72,12 +72,13 @@ h2 {
 
 .inactive {
   display: none;
-  margin: 0px 10px;
+  opacity: 0;
+  transition: 3s all linear;
 }
 
 .active {
   display: flex;
-  position: relative;
+  opacity: 1;
   margin: 20px 10px;
 }
 
