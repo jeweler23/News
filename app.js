@@ -1,16 +1,16 @@
 const body = document.body;
 const btnMore = document.createElement("button");
 const section = document.createElement("section");
-const news = document.createElement("h1");
+// const news = document.createElement("h1");
 
-body.appendChild(news);
+// body.appendChild(news);
 body.appendChild(section);
 body.appendChild(btnMore);
 
-news.textContent = "News";
+// news.textContent = "News";
 btnMore.textContent = "more 12  news";
 
-news.classList.add("title");
+// news.classList.add("title");
 btnMore.classList.add("btn");
 section.classList.add("wrapper");
 
@@ -33,7 +33,11 @@ if (author.ok) {
 function createLayout(obj, obj2) {
   if (obj.userId === obj2.id) {
     const div = document.createElement("div");
-    div.classList.add("item");
+    const author = document.createElement("div");
+    const authorImage = document.createElement("img");
+    const authorInfo = document.createElement("span");
+    const editor = document.createElement("span");
+
     const layout = `
     <h2 class="news__title">${
       obj.title[0].toUpperCase() + obj.title.slice(1)
@@ -41,11 +45,21 @@ function createLayout(obj, obj2) {
     <p class="news__text"> ${obj.body[0].toUpperCase() + obj.body.slice(1)}</p>
     `;
     div.innerHTML = layout;
+    div.appendChild(author);
+    author.appendChild(authorImage);
+    author.appendChild(authorInfo);
+    author.appendChild(editor);
 
     div.classList.add("item");
     div.classList.add("inactive");
+    author.classList.add("author");
+    authorImage.classList.add("author__image");
 
-    div.innerHTML += `<span class="autor">Autor: ${obj2.name}</span>`;
+    authorImage.src = `../image/author${obj2.id}.jpg`;
+    authorInfo.textContent = obj2.name;
+    editor.textContent = "Editor";
+
+    // div.innerHTML += `<span class="autor">Autor: ${obj2.name}</span>`;
     section.appendChild(div);
   }
   // } else {
@@ -81,7 +95,8 @@ function endNews() {
   let end = document.querySelectorAll(".inactive");
   if (end.length <= 0) {
     btnMore.textContent = "news end";
-    btnMore.disabled;
+    btnMore.style.display = "none";
+    setTimeout(() => alert("news end"), 1000);
   }
 }
 
