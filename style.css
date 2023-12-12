@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -9,10 +11,69 @@ html {
 }
 
 body {
+  margin: auto;
+  width: 1440px;
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: antiquewhite;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 200px;
+}
+
+.header__contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  gap: 10px;
+  width: auto;
+}
+
+.header__link,
+span {
+  text-decoration: none;
+  color: black;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.header__btn-group {
+  display: flex;
+  gap: 15px;
+}
+
+.login {
+  background-color: transparent;
+  border: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.menu {
+  background-color: transparent;
+  border: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.menu img {
+  width: 30px;
 }
 
 h1 {
@@ -27,7 +88,7 @@ h2 {
 .wrapper {
   display: grid;
   flex: 1 0 auto;
-  width: 1440px;
+  width: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   height: 100%;
   column-gap: 40px;

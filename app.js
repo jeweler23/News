@@ -15,7 +15,7 @@ btnMore.classList.add("btn");
 section.classList.add("wrapper");
 
 let posts = await fetch("https://jsonplaceholder.typicode.com/posts");
-let author = await fetch("https://jsonplaceholder.typicode.com/users/1");
+let author = await fetch("https://jsonplaceholder.typicode.com/users");
 let postsJson, authorJson;
 
 if (posts.ok) {
@@ -31,30 +31,34 @@ if (author.ok) {
 }
 
 function createLayout(obj, obj2) {
-  const div = document.createElement("div");
-  div.classList.add("item");
-  const layout = `
+  if (obj.userId === obj2.id) {
+    const div = document.createElement("div");
+    div.classList.add("item");
+    const layout = `
     <h2 class="news__title">${
       obj.title[0].toUpperCase() + obj.title.slice(1)
     }</h2>
     <p class="news__text"> ${obj.body[0].toUpperCase() + obj.body.slice(1)}</p>
     `;
-  div.innerHTML = layout;
+    div.innerHTML = layout;
 
-  div.classList.add("item");
-  div.classList.add("inactive");
+    div.classList.add("item");
+    div.classList.add("inactive");
 
-  if (obj.userId === obj2.id) {
     div.innerHTML += `<span class="autor">Autor: ${obj2.name}</span>`;
-  } else {
-    div.innerHTML += `<span class="autor">Autor: </span>`;
+    section.appendChild(div);
   }
+  // } else {
+  //   div.innerHTML += `<span class="autor">Autor: </span>`;
+  // }
 
-  section.appendChild(div);
+  // section.appendChild(div);
 }
 
 for (let i = 0; i < postsJson.length; i++) {
-  createLayout(postsJson[i], authorJson);
+  for (let j = 0; j < authorJson.length; j++) {
+    createLayout(postsJson[i], authorJson[j]);
+  }
 }
 
 for (let i = 0; i < 12; i++) {
@@ -63,11 +67,6 @@ for (let i = 0; i < 12; i++) {
   activeDiv.classList.add("active");
 }
 
-// const abs = section.childNodes.filter((elem) =>
-//   elem.classList.contains("active")
-// );
-
-// console.log(abs);
 let count = 24;
 function moreNews() {
   for (let i = 12; i < count; i++) {
@@ -78,4 +77,13 @@ function moreNews() {
   count += 12;
 }
 
+function endNews() {
+  let end = document.querySelectorAll(".inactive");
+  if (end.length <= 0) {
+    btnMore.textContent = "news end";
+    btnMore.disabled;
+  }
+}
+
 btnMore.addEventListener("click", moreNews);
+btnMore.addEventListener("click", endNews);
