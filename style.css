@@ -82,6 +82,7 @@ span {
 }
 
 .author {
+  align-content: flex-start;
   margin-top: 20px;
   width: 100%;
   height: 50px;
@@ -91,7 +92,7 @@ span {
 }
 
 .author__image {
-  margin-right: 5px;
+  margin-right: 10px;
   width: 50px;
   height: 100%;
   border-radius: 30%;
@@ -178,12 +179,12 @@ h2 {
   margin: 20px 10px;
 }
 
-/* .active::after {
-  height: 260px;
+.active::after {
+  height: 100%;
   width: 1px;
   content: "";
   position: absolute;
-  background: goldenrod;
+  background: grey;
   right: -30px;
   top: 15px;
 }
@@ -191,13 +192,31 @@ h2 {
 .active:nth-child(4n):after {
   visibility: hidden;
 }
-
-.active:nth-child(3n + 9):after {
-  height: 150px;
+/* 
+.active:nth-child(9n + 9):after {
+  height: 300px;
   width: 1px;
   content: "";
   position: absolute;
-  background: goldenrod;
+  background: grey;
+  right: -30px;
+  top: 10px;
+}
+.active:nth-child(11n + 11):after {
+  height: 300px;
+  width: 1px;
+  content: "";
+  position: absolute;
+  background: grey;
+  right: -30px;
+  top: 10px;
+}
+.active:nth-child(10n + 10):after {
+  height: 300px;
+  width: 1px;
+  content: "";
+  position: absolute;
+  background: grey;
   right: -30px;
   top: 10px;
 } */
