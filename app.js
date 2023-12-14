@@ -1,11 +1,11 @@
-const body = document.body;
+const main = document.querySelector('main');
 const btnMore = document.createElement("button");
 const section = document.createElement("section");
 // const news = document.createElement("h1");
 
 // body.appendChild(news);
-body.appendChild(section);
-body.appendChild(btnMore);
+main.appendChild(section);
+main.appendChild(btnMore);
 
 // news.textContent = "News";
 btnMore.textContent = "more 12  news";
@@ -34,17 +34,24 @@ function createLayout(obj, obj2) {
   if (obj.userId === obj2.id) {
     const div = document.createElement("div");
     const author = document.createElement("div");
+    const title = document.createElement("h2");
+    const body = document.createElement("p");
     const authorImage = document.createElement("img");
     const authorInfo = document.createElement("span");
     const editor = document.createElement("span");
+    // const textBack = document.createElement("span");
 
-    const layout = `
-    <h2 class="news__title">${
-      obj.title[0].toUpperCase() + obj.title.slice(1)
-    }</h2>
-    <p class="news__text"> ${obj.body[0].toUpperCase() + obj.body.slice(1)}</p>
-    `;
-    div.innerHTML = layout;
+    let titleText = obj.title[0].toUpperCase() + obj.title.slice(1);
+    const bodyText = obj.body[0].toUpperCase() + obj.body.slice(1);
+
+    title.textContent = titleText;
+    body.textContent = bodyText
+
+
+    // div.innerHTML = layout;
+   
+    div.appendChild(title);
+    div.appendChild(body);
     div.appendChild(author);
     author.appendChild(authorImage);
     author.appendChild(authorInfo);
@@ -59,14 +66,24 @@ function createLayout(obj, obj2) {
     authorInfo.textContent = obj2.name;
     editor.textContent = "Editor";
 
-    // div.innerHTML += `<span class="autor">Autor: ${obj2.name}</span>`;
     section.appendChild(div);
-  }
-  // } else {
-  //   div.innerHTML += `<span class="autor">Autor: </span>`;
-  // }
 
-  // section.appendChild(div);
+    let nice = createBackWord(obj.title);
+    nice.classList.add('text-back')
+  
+    const arrayTitle = titleText.split(' ')
+
+    arrayTitle.forEach((elem,index)=>{
+        if(elem === nice.textContent){
+          let newHead = []
+          newHead = arrayTitle.splice(0,index);
+                newHead.push(nice);
+                newHead.push(arrayTitle.splice(index+1,arrayTitle.length));        
+        }
+    })
+
+    // console.log(nice);
+  }
 }
 
 for (let i = 0; i < postsJson.length; i++) {
@@ -94,7 +111,11 @@ function moreNews() {
 function endNews() {
   let end = document.querySelectorAll(".inactive");
   if (end.length <= 0) {
-    btnMore.textContent = "news end";
+    const p = document.createElement('p')
+    p.textContent = 'News end...'
+    p.classList.add('end-news')
+    section.appendChild(p);
+
     btnMore.style.display = "none";
     setTimeout(() => alert("news end"), 1000);
   }
@@ -102,3 +123,22 @@ function endNews() {
 
 btnMore.addEventListener("click", moreNews);
 btnMore.addEventListener("click", endNews);
+
+function createBackWord(word) {
+  const span = document.createElement('span')
+
+  let array  = word.split(' ')
+  
+  let rand = Math.floor(Math.random() * array.length);
+  span.innerText = array[rand]
+  
+  return span
+}
+
+// createBackWord()
+
+// const str = 'Secret Victoria Aleksey Vadim Liza'
+
+// let array  = str.split(' ')
+// let rand = Math.floor(Math.random() * array.length);
+
