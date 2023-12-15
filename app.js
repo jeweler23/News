@@ -1,4 +1,4 @@
-const main = document.querySelector('main');
+const main = document.querySelector("main");
 const btnMore = document.createElement("button");
 const section = document.createElement("section");
 // const news = document.createElement("h1");
@@ -39,24 +39,26 @@ function createLayout(obj, obj2) {
     const authorImage = document.createElement("img");
     const authorInfo = document.createElement("span");
     const editor = document.createElement("span");
+    let span = document.createElement("span");
     // const textBack = document.createElement("span");
 
     let titleText = obj.title[0].toUpperCase() + obj.title.slice(1);
     const bodyText = obj.body[0].toUpperCase() + obj.body.slice(1);
 
     title.textContent = titleText;
-    body.textContent = bodyText
-
+    body.textContent = bodyText;
 
     // div.innerHTML = layout;
-   
+
     div.appendChild(title);
     div.appendChild(body);
     div.appendChild(author);
     author.appendChild(authorImage);
     author.appendChild(authorInfo);
     author.appendChild(editor);
+    title.appendChild(span);
 
+    span.classList.add("text-back");
     div.classList.add("item");
     div.classList.add("inactive");
     author.classList.add("author");
@@ -66,23 +68,26 @@ function createLayout(obj, obj2) {
     authorInfo.textContent = obj2.name;
     editor.textContent = "Editor";
 
-    section.appendChild(div);
-
     let nice = createBackWord(obj.title);
-    nice.classList.add('text-back')
-  
-    const arrayTitle = titleText.split(' ')
+    // nice.classList.add("text-back");
+    // title.appendChild(nice);
 
-    arrayTitle.forEach((elem,index)=>{
-        if(elem === nice.textContent){
-          let newHead = []
-          newHead = arrayTitle.splice(0,index);
-                newHead.push(nice);
-                newHead.push(arrayTitle.splice(index+1,arrayTitle.length));        
-        }
-    })
+    // const arrayTitle = titleText.split(" ");
 
-    // console.log(nice);
+    // titleText.forEach((elem, index) => {
+    //   // let newHead = [];
+    //   if (elem === nice.textContent) {
+    //     let text = elem.replace(
+    //       `${elem}`,
+    //       `<span class="text-back"> ${elem} </span>`
+    //     );
+    //     title.innerHTML += text;
+    //   }
+    //   title.innerText += ` ${elem} `;
+    // });
+
+    section.appendChild(div);
+    // console.log(title);
   }
 }
 
@@ -111,9 +116,9 @@ function moreNews() {
 function endNews() {
   let end = document.querySelectorAll(".inactive");
   if (end.length <= 0) {
-    const p = document.createElement('p')
-    p.textContent = 'News end...'
-    p.classList.add('end-news')
+    const p = document.createElement("p");
+    p.textContent = "News end...";
+    p.classList.add("end-news");
     section.appendChild(p);
 
     btnMore.style.display = "none";
@@ -125,20 +130,39 @@ btnMore.addEventListener("click", moreNews);
 btnMore.addEventListener("click", endNews);
 
 function createBackWord(word) {
-  const span = document.createElement('span')
-
-  let array  = word.split(' ')
-  
+  const span = document.createElement("span");
+  let array = word.split(" ");
   let rand = Math.floor(Math.random() * array.length);
-  span.innerText = array[rand]
-  
-  return span
+  span.innerText = array[rand];
+
+  return span;
 }
 
-// createBackWord()
+const item = document.querySelectorAll(".item");
 
-// const str = 'Secret Victoria Aleksey Vadim Liza'
+const checkbox = document.querySelector(".checkbox");
+const label = document.querySelector(".label");
 
-// let array  = str.split(' ')
-// let rand = Math.floor(Math.random() * array.length);
+// checkbox.forEach((elem, index) => {
+checkbox.addEventListener("click", (e) => {
+  addNone(label.textContent);
+});
 
+function addNone(name) {
+  item.forEach((elem) => {
+    const authorName = elem.querySelector(".author > span");
+    if (authorName.textContent !== name) {
+      elem.style.display = "none";
+    }
+  });
+}
+// });
+
+// filter.addEventListener("click", filterName(authorJson[0]));
+
+// function filterName(authorName) {
+//   let name = authorName.name;
+//   console.log(name);
+// }
+
+// filter(authorJson[0]);
