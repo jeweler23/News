@@ -12,10 +12,6 @@
   </head>
   <body>
     <header class="header">
-      <label for="author1" class="label">Leanne Graham</label>
-      <input type="checkbox" id="author1" class="checkbox" />
-      <label for="author2" class="label">Ervin Howell</label>
-      <input type="checkbox" id="author2" class="checkbox" />
       <div class="header__logo">
         <i class="fa-brands fa-mailchimp fa-2xl"></i>
         <p class="header__logo-text">Fox News</p>
@@ -41,6 +37,109 @@
     </header>
     <main>
       <h1>Latest Updates</h1>
+      <button class="filter-btn">
+        <i class="fa-solid fa-filter"></i> Filter
+      </button>
+      <div class="filter">
+        <div class="filter__group">
+          <h3>Author:</h3>
+          <label class="label"
+            ><input type="radio" class="checkbox" value="All" name="author" />
+            All</label
+          >
+          <label class="label"
+            ><input
+              type="radio"
+              class="checkbox"
+              value="Leanne Graham"
+              name="author"
+            />
+            Leanne Graham</label
+          >
+          <label class="label"
+            ><input
+              type="radio"
+              class="checkbox"
+              value="Ervin Howell"
+              name="author"
+            />
+            Ervin Howell</label
+          >
+          <label class="label">
+            <input
+              type="radio"
+              class="checkbox"
+              value="Clementine Bauch"
+              name="author"
+            />
+            Clementine Bauch</label
+          >
+          <label class="label">
+            <input
+              type="radio"
+              class="checkbox"
+              value="Patricia Lebsack"
+              name="author"
+            />
+            Patricia Lebsack</label
+          >
+          <label class="label">
+            <input
+              type="radio"
+              class="checkbox"
+              value="Chelsey Dietrich"
+              name="author"
+            />
+            Chelsey Dietrich</label
+          >
+          <label class="label">
+            <input
+              type="radio"
+              class="checkbox"
+              value="Mrs. Dennis Schulist"
+              name="author"
+            />
+            Mrs. Dennis Schulist</label
+          >
+          <label class="label">
+            <input
+              type="radio"
+              class="checkbox"
+              value="Kurtis Weissnat"
+              name="author"
+            />
+            Kurtis Weissnat</label
+          >
+          <label class="label">
+            <input
+              type="radio"
+              class="checkbox"
+              value="Nicholas Runolfsdottir V"
+              name="author"
+            />
+            Nicholas Runolfsdottir V</label
+          >
+          <label class="label">
+            <input
+              type="radio"
+              class="checkbox"
+              value="Glenna Reichert"
+              name="author"
+            />
+            Glenna Reichert</label
+          >
+          <label class="label">
+            <input
+              type="radio"
+              class="checkbox"
+              value="Clementina DuBuque"
+              name="author"
+            />
+            Clementina DuBuque</label
+          >
+          <button class="btn-show btn-show-disabled">Show</button>
+        </div>
+      </div>
     </main>
 
     <script src="app.js" type="module"></script>

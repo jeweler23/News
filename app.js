@@ -91,17 +91,20 @@ function createLayout(obj, obj2) {
   }
 }
 
-for (let i = 0; i < postsJson.length; i++) {
-  for (let j = 0; j < authorJson.length; j++) {
-    createLayout(postsJson[i], authorJson[j]);
+function firstDraw() {
+  for (let i = 0; i < postsJson.length; i++) {
+    for (let j = 0; j < authorJson.length; j++) {
+      createLayout(postsJson[i], authorJson[j]);
+    }
+  }
+
+  for (let i = 0; i < 12; i++) {
+    let activeDiv = section.childNodes[i];
+    activeDiv.classList.remove("inactive");
+    activeDiv.classList.add("active");
   }
 }
-
-for (let i = 0; i < 12; i++) {
-  let activeDiv = section.childNodes[i];
-  activeDiv.classList.remove("inactive");
-  activeDiv.classList.add("active");
-}
+firstDraw();
 
 let count = 24;
 function moreNews() {
@@ -140,22 +143,65 @@ function createBackWord(word) {
 
 const item = document.querySelectorAll(".item");
 
-const checkbox = document.querySelector(".checkbox");
-const label = document.querySelector(".label");
+const checkbox = document.querySelectorAll(".checkbox");
+const label = document.querySelectorAll(".label");
+const filterBtn = document.querySelector(".filter-btn");
+const filterDiv = document.querySelector(".filter");
+const showBtn = document.querySelector(".btn-show");
 
-// checkbox.forEach((elem, index) => {
-checkbox.addEventListener("click", (e) => {
-  addNone(label.textContent);
+filterBtn.addEventListener("click", () => {
+  filterDiv.classList.add("filter-active");
+  document.body.style.overflowY = "hidden";
 });
 
-function addNone(name) {
+document.addEventListener("click", (e) => {
+  if (e.target == filterDiv || e.target == showBtn) {
+    filterDiv.classList.remove("filter-active");
+    document.body.style.overflowY = "auto";
+  }
+});
+
+// console.log(checkbox, label[1].textContent.trim());
+
+document.addEventListener("click", (e) => {
+  if (e.target.type == "radio") {
+    showBtn.classList.remove("btn-show-disabled");
+    btnMore.style.display = "none";
+    if (e.target.checked) {
+      for (const key of authorJson) {
+        if (key.name == e.target.value) {
+          filter(e.target.value);
+        } else if (e.target.value == "All") {
+          firstDraw();
+          btnMore.style.display = "block";
+        }
+      }
+    } else {
+      firstDraw();
+      btnMore.style.display = "block";
+    }
+  }
+});
+
+function filter(name) {
   item.forEach((elem) => {
-    const authorName = elem.querySelector(".author > span");
-    if (authorName.textContent !== name) {
-      elem.style.display = "none";
+    const authorName = elem.querySelector(".author>span");
+    if (authorName.textContent == name) {
+      console.log(authorName.textContent);
+      elem.classList.add("active");
+    } else {
+      elem.classList.add("inactive");
+      elem.classList.remove("active");
     }
   });
 }
+
+// for (let i = 0; i < postsJson.length; i++) {
+//   for (let j = 0; j < authorJson.length; j++) {
+//     createLayout(postsJson[i], authorJson[j]);
+//   }
+// }
+// }
 // });
 
 // filter.addEventListener("click", filterName(authorJson[0]));
