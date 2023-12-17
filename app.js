@@ -56,7 +56,7 @@ function createLayout(obj, obj2) {
     author.appendChild(authorImage);
     author.appendChild(authorInfo);
     author.appendChild(editor);
-    title.appendChild(span);
+    // title.appendChild(span);
 
     span.classList.add("text-back");
     div.classList.add("item");
@@ -68,23 +68,28 @@ function createLayout(obj, obj2) {
     authorInfo.textContent = obj2.name;
     editor.textContent = "Editor";
 
-    let nice = createBackWord(obj.title);
-    // nice.classList.add("text-back");
+    let text = createBackWord(obj.title);
+
+    text.classList.add("text-back");
+
+    console.log(text);
     // title.appendChild(nice);
 
-    // const arrayTitle = titleText.split(" ");
+    const arrayTitle = titleText.split(" ");
 
-    // titleText.forEach((elem, index) => {
-    //   // let newHead = [];
-    //   if (elem === nice.textContent) {
-    //     let text = elem.replace(
-    //       `${elem}`,
-    //       `<span class="text-back"> ${elem} </span>`
-    //     );
-    //     title.innerHTML += text;
-    //   }
-    //   title.innerText += ` ${elem} `;
-    // });
+    arrayTitle.forEach((elem, index) => {
+      console.log(elem);
+
+      // let newHead = [];
+      if (elem === text.textContent) {
+        let text = elem.replace(
+          `${elem}`,
+          `<span class="text-back"> ${elem} </span>`
+        );
+        title.innerHTML += text;
+      }
+      title.innerHTML += ` ${elem} `;
+    });
 
     section.appendChild(div);
     // console.log(title);
