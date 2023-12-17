@@ -328,7 +328,7 @@ h2 {
 }
 
 .text-back {
-  background-color: brown;
+  background-color: rgb(39, 140, 222);
 }
 
 @media (max-width: 768px) {

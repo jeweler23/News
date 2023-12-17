@@ -45,7 +45,7 @@ function createLayout(obj, obj2) {
     let titleText = obj.title[0].toUpperCase() + obj.title.slice(1);
     const bodyText = obj.body[0].toUpperCase() + obj.body.slice(1);
 
-    title.textContent = titleText;
+    // title.textContent = titleText;
     body.textContent = bodyText;
 
     // div.innerHTML = layout;
@@ -77,19 +77,28 @@ function createLayout(obj, obj2) {
 
     const arrayTitle = titleText.split(" ");
 
-    arrayTitle.forEach((elem, index) => {
-      console.log(elem);
-
-      // let newHead = [];
-      if (elem === text.textContent) {
-        let text = elem.replace(
-          `${elem}`,
-          `<span class="text-back"> ${elem} </span>`
+    for (let i = 0; i < arrayTitle.length; i++) {
+      if (arrayTitle[i] === text.textContent) {
+        let text = arrayTitle[i].replace(
+          `${arrayTitle[i]}`,
+          `<span class="text-back"> ${arrayTitle[i]}</span>`
         );
         title.innerHTML += text;
+      } else {
+        title.innerHTML += ` ${arrayTitle[i]} `;
       }
-      title.innerHTML += ` ${elem} `;
-    });
+    }
+
+    // arrayTitle.forEach((elem, index) => {
+    //   if (elem === text.textContent) {
+    //     let text = elem.replace(
+    //       `${elem}`,
+    //       `<span class="text-back"> ${elem}</span>`
+    //     );
+    //     title.innerHTML += text;
+    //   }
+    //   title.innerHTML += ` ${elem} `;
+    // });
 
     section.appendChild(div);
     // console.log(title);
