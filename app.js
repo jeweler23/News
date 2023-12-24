@@ -1,3 +1,5 @@
+import { createBackWord } from "./js/random-word.js";
+
 const main = document.querySelector("main");
 const btnMore = document.createElement("button");
 const section = document.createElement("section");
@@ -72,9 +74,6 @@ function createLayout(obj, obj2) {
 
     text.classList.add("text-back");
 
-    console.log(text);
-    // title.appendChild(nice);
-
     const arrayTitle = titleText.split(" ");
 
     for (let i = 0; i < arrayTitle.length; i++) {
@@ -88,17 +87,6 @@ function createLayout(obj, obj2) {
         title.innerHTML += ` ${arrayTitle[i]} `;
       }
     }
-
-    // arrayTitle.forEach((elem, index) => {
-    //   if (elem === text.textContent) {
-    //     let text = elem.replace(
-    //       `${elem}`,
-    //       `<span class="text-back"> ${elem}</span>`
-    //     );
-    //     title.innerHTML += text;
-    //   }
-    //   title.innerHTML += ` ${elem} `;
-    // });
 
     section.appendChild(div);
     // console.log(title);
@@ -146,14 +134,14 @@ function endNews() {
 btnMore.addEventListener("click", moreNews);
 btnMore.addEventListener("click", endNews);
 
-function createBackWord(word) {
-  const span = document.createElement("span");
-  let array = word.split(" ");
-  let rand = Math.floor(Math.random() * array.length);
-  span.innerText = array[rand];
+// function createBackWord(word) {
+//   const span = document.createElement("span");
+//   let array = word.split(" ");
+//   let rand = Math.floor(Math.random() * array.length);
+//   span.innerText = array[rand];
 
-  return span;
-}
+//   return span;
+// }
 
 const item = document.querySelectorAll(".item");
 

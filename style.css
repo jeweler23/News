@@ -9,6 +9,36 @@
   font-size: 20px;
 }
 
+html::-webkit-scrollbar {
+  /* 1 - скроллбар */
+
+  width: 10px;
+  height: auto;
+  background-color: #faf5ed;
+}
+
+html::-webkit-scrollbar-button {
+  height: 0px;
+}
+
+html::-webkit-scrollbar-track {
+  /* 3 - трек */
+  /* height: 20px; */
+}
+
+html::-webkit-scrollbar-track-piece {
+  /* 4 - видимая часть трека */
+  /* height: 20px; */
+}
+
+html::-webkit-scrollbar-thumb {
+  /* 5 - ползунок */
+  opacity: 0;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #d1d1d1;
+}
+
 body {
   margin: auto;
   width: 100%;
@@ -27,8 +57,8 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px; */
 }
 
 .header__logo {
@@ -329,6 +359,11 @@ h2 {
 
 .text-back {
   background-color: rgb(39, 140, 222);
+}
+
+button,
+label {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
