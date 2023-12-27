@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popupstyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="popup-bg">
+        <div class="popup">
+            <h3 class="card"><img src="/News/image/credit-card.png" alt="" class="credit-icons">Depet/Credit Card</h3>
+            <form action="" class="form">
+                <div class="form__number option"><label for="card">Enter Card Number*</label>
+                    <input type="tel" name="card" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required></div>
+                <div class="form__date option"><label for="date-line">Valid Date</label>
+                    <input type="date" name="date-line"> </div>
+                <div class="form__cvv option"><label for="cvv">CVV*</label>
+                <input type="number" name="cvv" pattern="[0-9\s]" maxlength="19"></div>
+                
+                <button type="submit">Pay $50</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

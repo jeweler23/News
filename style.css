@@ -366,6 +366,10 @@ label {
   cursor: pointer;
 }
 
+.popup-bg{
+  position: absolute;
+}
+
 @media (max-width: 768px) {
   body {
     max-width: 768px;

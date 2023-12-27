@@ -1,4 +1,7 @@
 import { createBackWord } from "./js/random-word.js";
+// import { createBackWord } from "./js/news.js";
+// import { createLayout, createBackWord } from "./js/news.js";
+
 
 const main = document.querySelector("main");
 const btnMore = document.createElement("button");
@@ -66,7 +69,7 @@ function createLayout(obj, obj2) {
     author.classList.add("author");
     authorImage.classList.add("author__image");
 
-    authorImage.src = `../image/author${obj2.id}.jpg`;
+    authorImage.src = `image/author${obj2.id}.jpg`;
     authorInfo.textContent = obj2.name;
     editor.textContent = "Editor";
 
@@ -93,10 +96,17 @@ function createLayout(obj, obj2) {
   }
 }
 
+// console.log(createLayout(postsJson[0], authorJson[0]));
+
 function firstDraw() {
   for (let i = 0; i < postsJson.length; i++) {
     for (let j = 0; j < authorJson.length; j++) {
-      createLayout(postsJson[i], authorJson[j]);
+            // let fragment = document.createDocumentFragment();
+            // fragment.appendChild(createLayout(postsJson[i], authorJson[j]));
+            // section.appendChild(createLayout(postsJson[i], authorJson[j])[0])
+            createLayout(postsJson[i], authorJson[j])
+
+      // section.appendChild(createLayout(postsJson[i], authorJson[j]));
     }
   }
 
@@ -134,15 +144,6 @@ function endNews() {
 btnMore.addEventListener("click", moreNews);
 btnMore.addEventListener("click", endNews);
 
-// function createBackWord(word) {
-//   const span = document.createElement("span");
-//   let array = word.split(" ");
-//   let rand = Math.floor(Math.random() * array.length);
-//   span.innerText = array[rand];
-
-//   return span;
-// }
-
 const item = document.querySelectorAll(".item");
 
 const checkbox = document.querySelectorAll(".checkbox");
@@ -162,8 +163,6 @@ document.addEventListener("click", (e) => {
     document.body.style.overflowY = "auto";
   }
 });
-
-// console.log(checkbox, label[1].textContent.trim());
 
 document.addEventListener("click", (e) => {
   if (e.target.type == "radio") {
