@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="popupstyle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -36,7 +37,51 @@
       </div>
       <div class="popup-bg">
         <div class="popup">
-          <h3 class="popup__head">Debit/Credit Card</h3>
+          <h3 class="card">
+            <img src="image/credit-card.png" alt="" class="credit-icons" />Depet
+            / Credit Card
+          </h3>
+          <form action="" class="form-popup">
+            <div class="form__number option">
+              <label for="card">Enter Card Number *</label>
+              <input
+                type="tel"
+                id="card"
+                inputmode="numeric"
+                pattern="[0-9\s]{13,19}"
+                maxlength="19"
+                placeholder="xxxx xxxx xxxx xxxx"
+                class="input"
+              />
+            </div>
+            <div class="form__date option">
+              <label for="date-line">Valid Date</label>
+              <input type="date" id="date-line" class="input" />
+            </div>
+            <div class="form__cvv option">
+              <label for="cvv">CVV *</label>
+              <input
+                class="input"
+                type="number"
+                id="cvv"
+                pattern="[0-9\s]"
+                maxlength="3"
+                placeholder="xxx"
+                inputmode="numeric"
+              />
+            </div>
+            <button class="popup-btn" type="button">
+              <span class="popup-btn__text">Pay $50 <i class="load"></i></span>
+            </button>
+            <p class="error-info">
+              feature is currently not available in your region
+            </p>
+          </form>
+
+          <p class="popup-info">
+            Your card details would be secutely saved for faster payments. Your
+            CVV will not started
+          </p>
         </div>
       </div>
     </header>
@@ -148,5 +193,6 @@
     </main>
 
     <script src="app.js" type="module"></script>
+    <script src="js/popup-open.js"></script>
   </body>
 </html>

@@ -254,7 +254,6 @@ h2 {
 }
 
 .filter {
-  /* margin: 0 20px; */
   opacity: 0;
   pointer-events: none;
   background-color: rgba(71, 65, 65, 0.5);
@@ -366,7 +365,7 @@ label {
   cursor: pointer;
 }
 
-.popup-bg{
+.popup-bg {
   position: absolute;
 }
 
