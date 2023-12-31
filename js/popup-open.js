@@ -8,8 +8,6 @@ const btnMenu = document.querySelector(".menu");
 const popupMenu = document.querySelector(".popup-menu");
 const blockMenu = document.querySelector(".menu-block");
 
-console.log(btnMenu);
-
 btn.addEventListener("click", () => {
   popup.classList.add("popup-bg__active");
   document.body.style.overflowY = "hidden";

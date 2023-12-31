@@ -70,13 +70,15 @@ document.addEventListener("click", (e) => {
       for (const key of authorJson) {
         if (key.name == e.target.value) {
           filter(e.target.value);
-        } else if (e.target.value == "All") {
-          firstDraw();
-          btnMore.style.display = "block";
         }
       }
+      if (e.target.value == "All") {
+        console.log("ds");
+        firstDraw(section);
+        btnMore.style.display = "block";
+      }
     } else {
-      firstDraw();
+      firstDraw(section);
       btnMore.style.display = "block";
     }
   }
