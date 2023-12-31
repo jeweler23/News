@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="popupstyle.css" />
+    <link rel="stylesheet" href="menu.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -82,6 +83,48 @@
             Your card details would be secutely saved for faster payments. Your
             CVV will not started
           </p>
+        </div>
+      </div>
+      <div class="popup-menu">
+        <div class="menu-block">
+          <div class="menu-logo">
+            <i class="fa-brands fa-mailchimp fa-2xl"></i>
+          </div>
+          <div class="menu__head">
+            <h3>Welcome back!</h3>
+            <p class="menu__text">Please enter your details</p>
+          </div>
+
+          <form action="" class="menu__form">
+            <div class="menu__email">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                class="email"
+              />
+            </div>
+            <div class="menu__password">
+              <input type="password" placeholder="Password" class="password" />
+            </div>
+            <div class="menu__option">
+              <label for=""
+                ><input type="checkbox" name="remember" id="remember" />
+                Remember for 30 days</label
+              >
+              <p class="forgot">Forgot password?</p>
+            </div>
+
+            <button type="submit" class="form__btn">Log In</button>
+            <a href="#" class="form__link"
+              ><img src="image/google.png" alt="google" /> Log in with Google</a
+            >
+          </form>
+          <span class="registration"
+            >Don't have an account?
+            <button class="sign-up">Sign Up</button></span
+          >
         </div>
       </div>
     </header>
