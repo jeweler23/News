@@ -60,7 +60,6 @@ function createLayout(section, obj, obj2) {
     }
 
     section.appendChild(div);
-    // return section;
   }
 }
 

@@ -12,22 +12,26 @@ console.log(btnMenu);
 
 btn.addEventListener("click", () => {
   popup.classList.add("popup-bg__active");
+  document.body.style.overflowY = "hidden";
 });
 
 document.addEventListener("click", (e) => {
   if (e.target == popup) {
     popup.classList.remove("popup-bg__active");
     errorInfo.classList.remove("error-info__active");
+    document.body.style.overflowY = "auto";
   }
   if (e.target == popupMenu) {
     popupMenu.classList.remove("popup-menu__active");
     blockMenu.classList.remove("menu-block__active");
+    document.body.style.overflowY = "auto";
   }
 });
 
 submit.addEventListener("click", () => {
   load.classList.add("load_active");
   colorText.style.color = "black";
+
   setTimeout(clear, 1000);
 });
 
@@ -41,4 +45,5 @@ function clear() {
 btnMenu.addEventListener("click", () => {
   popupMenu.classList.add("popup-menu__active");
   blockMenu.classList.add("menu-block__active");
+  document.body.style.overflowY = "hidden";
 });
