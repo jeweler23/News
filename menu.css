@@ -1,4 +1,4 @@
-.popup-menu {
+.popup-login {
   display: flex;
   justify-content: end;
   opacity: 0;
@@ -12,7 +12,7 @@
   background-color: rgba(71, 65, 65, 0.5);
 }
 
-.menu-block {
+.login-block {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -28,11 +28,11 @@
   transition: 1s linear;
 }
 
-.menu-block__active {
+.login-block__active {
   transform: translateX(0%);
 }
 
-.popup-menu__active {
+.popup-login__active {
   /* transform: translateX(0%); */
   pointer-events: all;
   z-index: 5;
@@ -43,18 +43,18 @@
   /* margin-top: 30px; */
 }
 
-.menu__head {
+.login__head {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.menu__head > h3 {
+.login__head > h3 {
   font-size: 36px;
 }
 
-.menu__form {
+.login__form {
   margin: 0px 100px;
   display: grid;
   grid-template-columns: 200px 200px;
@@ -68,7 +68,7 @@
     "f f";
 }
 
-.menu__email {
+.login__email {
   grid-area: a;
   position: relative;
 }
@@ -78,7 +78,7 @@
   height: 100%;
 }
 
-.menu__password {
+.login__password {
   grid-area: b;
   position: relative;
 }
@@ -88,7 +88,7 @@
   height: 100%;
 }
 
-.menu__option {
+.login__option {
   grid-area: d;
   display: flex;
   justify-content: space-between;
@@ -127,8 +127,8 @@ input {
   background-color: transparent;
 }
 
-.menu__email::after,
-.menu__password::after {
+.login__email::after,
+.login__password::after {
   content: "";
   position: absolute;
   width: 100%;
