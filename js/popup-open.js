@@ -7,6 +7,9 @@ const errorInfo = document.querySelector(".error-info");
 const btnLogin = document.querySelector(".login");
 const popupLogin = document.querySelector(".popup-login");
 const blockLogin = document.querySelector(".login-block");
+const btnMenu = document.querySelector(".menu");
+const popupMenu = document.querySelector(".popup-menu")
+const blockMenu = document.querySelector(".menu-info")
 
 btn.addEventListener("click", () => {
   popup.classList.add("popup-bg__active");
@@ -22,6 +25,11 @@ document.addEventListener("click", (e) => {
   if (e.target == popupLogin) {
     popupLogin.classList.remove("popup-login__active");
     blockLogin.classList.remove("login-block__active");
+    document.body.style.overflowY = "auto";
+  }
+  if (e.target == popupMenu) {
+    popupMenu.classList.remove('popup-menu__active')
+    blockMenu.classList.remove('menu-info__active');
     document.body.style.overflowY = "auto";
   }
 });
@@ -45,3 +53,9 @@ btnLogin.addEventListener("click", () => {
   blockLogin.classList.add("login-block__active");
   document.body.style.overflowY = "hidden";
 });
+
+btnMenu.addEventListener('click',()=>{
+  popupMenu.classList.add('popup-menu__active');
+  blockMenu.classList.add('menu-info__active');
+  document.body.style.overflowY = "hidden";
+})

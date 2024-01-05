@@ -49,6 +49,7 @@ body {
 }
 
 .header {
+  position: relative;
   padding-top: 20px;
   background-color: #faf5ed;
   /* padding: 0px 20px; */
