@@ -21,6 +21,7 @@
   
   .menu-info{
     height: 100%;
+    width: 500px;
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -29,6 +30,7 @@
     border-radius: 10px;
     transition: 1s linear;
     transform: translateY(-100%);
+    position: relative;
   }
 
   .menu-info__active{
@@ -58,8 +60,10 @@
 }
 
 .menu__about{
-    width: 500px;
-    padding: 10px;
+    /* width: 500px; */
+    text-align: center;
+
+    padding: 50px;
 }
 
 .menu__link{
@@ -68,4 +72,70 @@
     border: 1px solid rgb(129, 125, 125);
     border-radius: 100%;
     padding: 10px;
+    transition: 0.5s ease;
+}
+
+.menu__link:hover{
+  background: black;
+}
+
+.close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  display: flex;
+  border: none;
+  transition: all 1s linear;
+  box-sizing: border-box;
+  border-radius: 100%;
+  padding: 5px;
+}
+
+
+.close::before,
+.close::after,
+span::before,
+span::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: transparent;
+  transition: 1s;
+}
+
+.close::before {
+  top: -2px;
+  left: -2px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+.close::after {
+  top: -2px;
+  right: -2px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.close span::before {
+  bottom: -2px;
+  left: -2px;
+  border-bottom: 2px solid #000;
+  border-left: 2px solid #000;
+}
+.close span::after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+
+.close:hover::before,
+.close:hover::after,
+.close:hover span::before,
+.close:hover span::after  {
+  width: calc( 48px / 2);
+  height: calc( 48px / 2);
 }

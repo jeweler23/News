@@ -64,6 +64,7 @@ document.addEventListener("click", (e) => {
 
 document.addEventListener("click", (e) => {
   if (e.target.type == "radio") {
+    
     showBtn.classList.remove("btn-show-disabled");
     btnMore.style.display = "none";
     if (e.target.checked) {
@@ -73,7 +74,7 @@ document.addEventListener("click", (e) => {
         }
       }
       if (e.target.value == "All") {
-        console.log("ds");
+
         firstDraw(section);
         btnMore.style.display = "block";
       }

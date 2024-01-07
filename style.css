@@ -46,6 +46,7 @@ body {
   align-items: center;
   flex-direction: column;
   /* background-color: rgb(41, 40, 38); */
+  background-color: #faf5ed;
 }
 
 .header {

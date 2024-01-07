@@ -1,5 +1,6 @@
 const btn = document.querySelector(".subscribe");
-const popup = document.querySelector(".popup-bg");
+const popupBg = document.querySelector(".popup-bg");
+const popup = document.querySelector(".popup");
 const submit = document.querySelector(".popup-btn");
 const colorText = document.querySelector(".popup-btn__text");
 const load = document.querySelector(".load");
@@ -11,23 +12,25 @@ const btnMenu = document.querySelector(".menu");
 const popupMenu = document.querySelector(".popup-menu")
 const blockMenu = document.querySelector(".menu-info")
 
+
+
 btn.addEventListener("click", () => {
-  popup.classList.add("popup-bg__active");
+  popupBg.classList.add("popup-bg__active");
   document.body.style.overflowY = "hidden";
 });
 
 document.addEventListener("click", (e) => {
-  if (e.target == popup) {
-    popup.classList.remove("popup-bg__active");
+  if (e.target == popupBg || e.target == popup.lastElementChild) {
+    popupBg.classList.remove("popup-bg__active");
     errorInfo.classList.remove("error-info__active");
     document.body.style.overflowY = "auto";
   }
-  if (e.target == popupLogin) {
+  if (e.target == popupLogin || e.target == blockLogin.lastElementChild) {
     popupLogin.classList.remove("popup-login__active");
     blockLogin.classList.remove("login-block__active");
     document.body.style.overflowY = "auto";
   }
-  if (e.target == popupMenu) {
+  if (e.target == popupMenu || e.target == blockMenu.lastElementChild) {
     popupMenu.classList.remove('popup-menu__active')
     blockMenu.classList.remove('menu-info__active');
     document.body.style.overflowY = "auto";
@@ -52,6 +55,7 @@ btnLogin.addEventListener("click", () => {
   popupLogin.classList.add("popup-login__active");
   blockLogin.classList.add("login-block__active");
   document.body.style.overflowY = "hidden";
+  
 });
 
 btnMenu.addEventListener('click',()=>{
