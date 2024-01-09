@@ -155,3 +155,36 @@ button {
 }
 /* ::-webkit-inner-spin-button { display: block; } */
 /* ::-webkit-calendar-picker-indicator { background: transparent; } */
+
+@media (max-width: 620px) {
+  .popup {
+    padding: 20px;
+  }
+  .popup-info {
+    font-size: 14px;
+  }
+  .form__number {
+    width: 350px;
+  }
+
+  .form__cvv {
+    width: 170px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-popup {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "a a"
+      "b c"
+      "d d";
+  }
+}
+
+@media (max-width: 400px) {
+  .popup {
+    padding: 10px;
+  }
+}

@@ -13,17 +13,18 @@
 }
 
 .login-block {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #faf5ed;
   align-items: center;
   gap: 20px;
-  height: 97.5%;
+  /* height: auto; */
   border-radius: 10px;
   margin: 10px;
-  margin-bottom: 30px;
+  width: auto;
+  /* margin-bottom: 30px; */
   transform: translateX(100%);
   transition: 1s linear;
 }
@@ -147,4 +148,41 @@ input {
   border: none;
   font-style: bold;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .login__logo {
+    display: flex;
+  }
+}
+
+.login__form {
+  margin: 0 50px;
+  grid-template-columns: 150px 150px;
+}
+
+@media (max-width: 450px) {
+  .login-block {
+    width: 100%;
+  }
+  .login__head h3 {
+    font-size: 26px;
+  }
+
+  .login__text {
+    font-size: 16px;
+  }
+
+  .login__form {
+    margin: 0 25px;
+    grid-template-columns: 120px 120px;
+  }
+
+  p.forgot {
+    font-size: 16px;
+  }
+
+  .remember-pass {
+    font-size: 16px;
+  }
 }

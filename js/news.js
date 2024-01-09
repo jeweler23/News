@@ -51,7 +51,7 @@ function createLayout(section, obj, obj2) {
       if (arrayTitle[i] === text.textContent) {
         let text = arrayTitle[i].replace(
           `${arrayTitle[i]}`,
-          `<span class="text-back"> ${arrayTitle[i]}</span>`
+          `<span class="text-back"> ${arrayTitle[i]}</span>`,
         );
         title.innerHTML += text;
       } else {
